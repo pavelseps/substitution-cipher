@@ -2,7 +2,7 @@ import numpy as np
 import random
 
 ALPHABET = np.array(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"])
-SKIP = np.array([" ", ".", "(", ")", "[", "]"])
+SKIP = np.array([" ", ".", ",", "(", ")", "[", "]"])
 
 
 class Cipher:
@@ -10,6 +10,21 @@ class Cipher:
         self.dictionary = None
         self.original = ""
         self.cipher = ""
+
+    def set_dictionary(self, dict):
+        self.dictionary = dict
+
+    def set_original_text(self, text):
+        self.original = text
+
+    def set_cipher_text(self, text):
+        self.cipher = text
+
+    def get_original_text(self):
+        return self.original
+
+    def get_cipher_text(self):
+        return self.cipher
 
     def encode(self):
         # Set data to work
@@ -50,18 +65,3 @@ class Cipher:
     def decode(self):
         pass
 
-
-    def set_dictionary(self, dict):
-        self.dictionary = dict
-
-    def set_original_text(self, text):
-        self.original = text
-
-    def set_cipher_text(self, text):
-        self.cipher = text
-
-    def get_original_text(self):
-        return self.original
-
-    def get_cipher_text(self):
-        return self.cipher

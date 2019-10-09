@@ -6,7 +6,14 @@ text_to_decode = "YWUY XWDDMTKBT, OR YWUYKBT, KD YLW MPY OE POXQODKBT MBC DWBCKB
 
 dict = Dictionary("./dictionary.txt")
 dict.load()
+dict.process_dict_pattern()
 
+# pattern = dict.word_to_pattern("ABED")
+pattern = [0, 1, 1]
+print(pattern)
+print(dict.find_pattern(pattern))
+
+exit()
 
 cip = Cipher()
 cip.set_dictionary(dict)
