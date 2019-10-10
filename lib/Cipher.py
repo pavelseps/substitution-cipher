@@ -104,8 +104,11 @@ class Cipher:
         # Write original
         self.original = ""
         for char_c in self.cipher:
-            if not np.isin(char_c, SKIP) and len(intersect_dict[char_c]) > 0:
-                self.original += intersect_dict[char_c][0]
+            if not np.isin(char_c, SKIP):
+                if len(intersect_dict[char_c]) == 1:
+                    self.original += intersect_dict[char_c][0]
+                else:
+                    self.original += "_"
             else:
                 self.original += char_c
 
